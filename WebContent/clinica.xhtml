@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+					  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:rich="http://richfaces.org/rich">
+<ui:composition template="template.xhtml">
+
+<ui:define name="conteudo">
+	<a4j:keepAlive beanName="clinicaBean" />
+	<h1>Gerenciamento de Clínicas</h1>
+	<div>
+		<style>
+			.tamanhoFonte {
+				font-size: 18px;
+			}
+		</style>
+	</div>
+	<h:form id="form">
+	 <rich:panel header="Cadastro">
+		<div style="width: 100%;">
+			<h:outputText value="Nome: " styleClass="tamanhoFonte"/>
+			<h:inputText value="#{clinicaBean.clinicaCadastrar.descricao}" styleClass="tamanhoFonte"/>
+			<br/>
+			<br/>
+			<a4j:commandButton value="Cadastrar" actionListener="#{clinicaBean.cadastrarClinica()}"/>
+		</div>
+	</rich:panel>
+	</h:form>
+</ui:define>
+</ui:composition>
+</html>
